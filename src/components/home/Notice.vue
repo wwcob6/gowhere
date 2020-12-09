@@ -13,6 +13,7 @@ export default {
 
 <style scoped lang="stylus">
   .notice
+    background #eee
     margin .1rem 0 .1rem 0
     display flex
     .notice-icon
