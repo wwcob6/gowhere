@@ -5,10 +5,10 @@
     </div>
     <div class="header-input">
       <span class="iconfont search-icon">&#xe632;</span>
-      输入城市/景点/游玩主题
+      输入实验主题
     </div>
     <div class="header-right">
-      城市
+      班级
       <span class="iconfont">&#xe6aa;</span>
     </div>
   </div>
@@ -21,10 +21,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import "../../assets/styles/varibles.styl"
   .header
     display : flex
     line-height: .86rem
-    background: #00bcd4;
+    background: $bgColor;
     color #fff
     .header-left
       width : .64rem
@@ -32,6 +33,7 @@ export default {
       .back-icon
         text-align center
         font-size 0.4rem
+        margin-left 0.1rem
     .header-right
       width : 1.24rem
       float : right
