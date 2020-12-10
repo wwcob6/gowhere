@@ -14,6 +14,8 @@ import HomeSwiper from '@/components/home/Swiper'
 import HomeIcons from '@/components/home/Icons'
 import HomeNotice from '@/components/home/Notice'
 import HomeRecommend from '@/components/home/Recommend'
+import axios from 'axios'
+
 export default {
   name: 'Home',
   components: {
@@ -22,6 +24,20 @@ export default {
     HomeIcons,
     HomeNotice,
     HomeRecommend
+  },
+  methods: {
+    getHomeInfo () {
+      axios.get('/api/index.json')
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
 }
 </script>

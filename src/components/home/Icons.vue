@@ -20,7 +20,7 @@ export default {
   data () {
     return {
       iconList: [{ id: '0001', imgUrl: require('../../assets/home-icon.png'), desc: '主页' },
-        { id: '0002', imgUrl: require('../../assets/text-icon.png'), desc: '实验内容' },
+        { id: '0002', imgUrl: require('../../assets/text-icon.png'), desc: '实验内容11111111111111111111111111111111111111111' },
         { id: '0003', imgUrl: require('../../assets/score-icon.png'), desc: '实验成绩' },
         { id: '0004', imgUrl: require('../../assets/found-icon.png'), desc: '发现' },
         { id: '0005', imgUrl: require('../../assets/notify-icon.png'), desc: '发布通知' },
