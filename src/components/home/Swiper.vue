@@ -2,7 +2,7 @@
   <div class="wrapper">
     <swiper :options="swiperOption" ref="mySwiper">
     <!-- slides -->
-      <swiper-slide v-for="item in swiperList" :key="item.id">
+      <swiper-slide v-for="item in list" :key="item.id">
       <img class="swiper-img" :src="item.imgUrl"/>
       </swiper-slide>
     <!-- Optional controls -->
@@ -13,6 +13,9 @@
 
 <script>
 export default {
+  props: {
+    list: Array
+  },
   name: 'HomeSwiper',
   data () {
     return {
@@ -46,7 +49,7 @@ export default {
     overflow hidden
     width 100%
     height 0
-    padding-bottom 37.07%
+    padding-bottom 33.07%
     .swiper-img
       width 100%
 </style>

@@ -7,16 +7,21 @@
       <span class="iconfont search-icon">&#xe632;</span>
       输入实验主题
     </div>
-    <div class="header-right">
-      班级
-      <span class="iconfont">&#xe6aa;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{ this.className }}
+        <span class="iconfont">&#xe6aa;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: {
+    className: String
+  }
 }
 </script>
 
@@ -24,7 +29,7 @@ export default {
 @import "../../assets/styles/varibles.styl"
   .header
     display : flex
-    line-height: .86rem
+    line-height: $headerHeight
     background: $bgColor;
     color #fff
     .header-left
@@ -38,6 +43,7 @@ export default {
       width : 1.24rem
       float : right
       text-align center
+      color #ffffff
     .header-input
       flex : 1
       background: #fff

@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <home-header></home-header>
-    <home-swiper></home-swiper>
-    <home-icons></home-icons>
+    <home-header :className="className"></home-header>
+    <home-swiper :list="swiperList"></home-swiper>
+    <home-icons :list="iconList"></home-icons>
     <home-notice></home-notice>
-    <home-recommend></home-recommend>
+    <home-recommend :list="recommendList"></home-recommend>
   </div>
 </template>
 
@@ -25,11 +25,26 @@ export default {
     HomeNotice,
     HomeRecommend
   },
+  data () {
+    return {
+      className: '',
+      swiperList: [],
+      iconList: [],
+      recommendList: []
+    }
+  },
   methods: {
     getHomeInfo () {
       axios.get('/api/index.json')
         .then((res) => {
-          console.log(res)
+          res = res.data
+          if (res.ret && res.data) {
+            const data = res.data
+            this.className = data.className
+            this.swiperList = data.swiperList
+            this.iconList = data.iconList
+            this.recommendList = data.recommendList
+          }
         })
         .catch((err) => {
           console.log(err)

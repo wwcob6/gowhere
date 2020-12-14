@@ -1,0 +1,95 @@
+{
+  "ret": true,
+  "data":{
+    "hotCities": [{
+      "id": 1,
+      "spell": "beijing",
+      "name": "实验一"
+    }, {
+      "id": 3,
+      "spell": "shanghai",
+      "name": "实验二"
+    }, {
+      "id": 47,
+      "spell": "xian",
+      "name": "实验三"
+    }, {
+      "id": 239,
+      "spell": "sanya",
+      "name": "实验四"
+    }, {
+      "id": 188,
+      "spell": "lijiang",
+      "name": "实验五"
+    }, {
+      "id": 125,
+      "spell": "guilin",
+      "name": "实验6"
+    }, {
+      "id": 240,
+      "spell": "xianggang",
+      "name": "实验7"
+    }, {
+      "id": 241,
+      "spell": "chengdu",
+      "name": "实验8"
+    }, {
+      "id": 242,
+      "spell": "shenzheng",
+      "name": "实验9"
+    }],
+    "cities": {
+      "通": [{
+        "id": 56,
+        "spell": "aba",
+        "name": "通信一班"
+      }, {
+        "id": 57,
+        "spell": "akesu",
+        "name": "通信二班"
+      }, {
+        "id": 58,
+        "spell": "alashanmeng",
+        "name": "通信三班"
+      }, {
+        "id": 59,
+        "spell": "aletai",
+        "name": "通信四班"
+      }],
+      "电": [{
+        "id": 1,
+        "spell": "beijing",
+        "name": "电子一班"
+      }, {
+        "id": 66,
+        "spell": "baicheng",
+        "name": "电子二班"
+      }, {
+        "id": 67,
+        "spell": "baise",
+        "name": "电子三班"
+      }, {
+        "id": 68,
+        "spell": "baishan",
+        "name": "电子四班"
+      }],
+      "自": [{
+        "id": 2,
+        "spell": "chongqing",
+        "name": "自动化一班"
+      }, {
+        "id": 5,
+        "spell": "changchun",
+        "name": "自动化二班"
+      }, {
+        "id": 6,
+        "spell": "changsha",
+        "name": "自动化三班"
+      }, {
+        "id": 7,
+        "spell": "changzhou",
+        "name": "自动化四班"
+      }]
+    }
+  }
+}

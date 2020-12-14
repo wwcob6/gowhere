@@ -2,20 +2,23 @@
   <div>
     <div class="recommend-title">主要实验</div>
     <ul v-for=" (item, index) of itemList" :key="index">
-      <li class="item">
+      <router-link :to="'/detail/' + item.id" class="item" tag="li">
         <img class="item-img" :src="item.imgUrl" alt=""/>
         <div class="item-info">
           <p class="item-title">{{ item.title }}</p>
           <p class="item-desc">{{ item.desc }}</p>
           <button class="item-btn">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    list: Array
+  },
   name: 'HomeRecommend',
   data () {
     return {
