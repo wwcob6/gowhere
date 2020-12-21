@@ -1,11 +1,11 @@
 <template>
   <div class="list" ref="wrapper">
-    <div>
+    <div class="content">
       <div class="area">
         <div class="title border-topbottom">当前班级</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">通信一班</div>
+            <div class="button">{{ this.$store.state.classNumber }}</div>
           </div>
         </div>
       </div>
@@ -17,10 +17,14 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item, key) of cities" :key="key">
+      <div class="area"
+           v-for="(item, key) of cities"
+           :key="key"
+           :ref="key">
         <div class="title border-topbottom">{{ key }}</div>
         <div class="item-list">
-          <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id">
+          <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id"
+          @click="handleClassClick(innerItem.name)">
             {{innerItem.name}}
           </div>
         </div>
@@ -30,22 +34,48 @@
 </template>
 
 <script>
-import BScroll from 'better-scroll'
+import { EventBus } from '../../../bus/event-bus'
+import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
   props: {
     hot: Array,
     cities: Object
   },
-  mounted: function () {
-    this.scroll = new BScroll(this.$refs.wrapper)
+  data: function () {
+    return {
+      letter: '通'
+    }
+  },
+  methods: {
+    handleClassClick: function (item) {
+      this.$store.dispatch('changeClass', item)
+      alert('选择成功，请返回！')
+    }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
+    console.log(this.scroll)
+  },
+  updated () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
+    EventBus.$on('alphabetMsg', (msg) => {
+      this.letter = msg
+    })
   },
   watch: {
-    letter () {
-      if (this.letter) {
-        const element = this.$refs[this.letter][0]
-        this.scroll.scrollToElement(element)
-      }
+    // letter () {
+    //   if (this.letter) {
+    //     const element = this.$refs[this.letter][0]
+    //     this.scroll.scrollToElement(element)
+    //   }
+    // }
+    letter: function (oldValue, newValue) {
+      console.log(oldValue)
+      console.log(newValue)
+      const element = this.$refs[newValue][0]
+      console.log(element)
+      this.scroll.scrollToElement(element)
     }
   }
 }
@@ -62,7 +92,7 @@ export default {
   &:before
     border-color #ccc
 .list
-  overflow hidden
+  overflow: hidden
   position absolute
   top 1.58rem
   left 0

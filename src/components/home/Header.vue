@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{ this.className }}
+        {{ this.$store.state.classNumber }}
         <span class="iconfont">&#xe6aa;</span>
       </div>
     </router-link>
@@ -40,7 +40,7 @@ export default {
         font-size 0.4rem
         margin-left 0.1rem
     .header-right
-      width : 1.24rem
+      width : 1.8rem
       float : right
       text-align center
       color #ffffff

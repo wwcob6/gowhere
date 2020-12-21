@@ -41,53 +41,53 @@
     "cities": {
       "通": [{
         "id": 56,
-        "spell": "aba",
+        "spell": "tongxinyiban",
         "name": "通信一班"
       }, {
         "id": 57,
-        "spell": "akesu",
+        "spell": "tongxinerban",
         "name": "通信二班"
       }, {
         "id": 58,
-        "spell": "alashanmeng",
+        "spell": "tongxinsanban",
         "name": "通信三班"
       }, {
         "id": 59,
-        "spell": "aletai",
+        "spell": "tongxinsiban",
         "name": "通信四班"
       }],
       "电": [{
         "id": 1,
-        "spell": "beijing",
+        "spell": "dianziyiban",
         "name": "电子一班"
       }, {
         "id": 66,
-        "spell": "baicheng",
+        "spell": "dianzierban",
         "name": "电子二班"
       }, {
         "id": 67,
-        "spell": "baise",
+        "spell": "dianzisanban",
         "name": "电子三班"
       }, {
         "id": 68,
-        "spell": "baishan",
+        "spell": "dianzisiban",
         "name": "电子四班"
       }],
       "自": [{
         "id": 2,
-        "spell": "chongqing",
+        "spell": "zidonghuayiban",
         "name": "自动化一班"
       }, {
         "id": 5,
-        "spell": "changchun",
+        "spell": "zidonghuaerban",
         "name": "自动化二班"
       }, {
         "id": 6,
-        "spell": "changsha",
+        "spell": "zidonghuasanban",
         "name": "自动化三班"
       }, {
         "id": 7,
-        "spell": "changzhou",
+        "spell": "zidonghua",
         "name": "自动化四班"
       }]
     }
