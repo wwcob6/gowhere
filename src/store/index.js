@@ -1,20 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import state from '@/store/state'
+import mutations from '@/store/mutations'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    classNumber: '通信一班'
-  },
-  actions: {
-    changeClass (context, classNumber) {
-      context.commit('changeClass', classNumber)
-    }
-  },
-  mutations: {
-    changeClass (state, classNumber) {
-      state.classNumber = classNumber
-    }
-  }
+  state,
+  mutations
 })

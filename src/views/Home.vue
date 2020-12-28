@@ -15,6 +15,7 @@ import HomeIcons from '@/components/home/Icons'
 import HomeNotice from '@/components/home/Notice'
 import HomeRecommend from '@/components/home/Recommend'
 import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -25,16 +26,20 @@ export default {
     HomeNotice,
     HomeRecommend
   },
+  computed: {
+    ...mapState(['classNumber'])
+  },
   data () {
     return {
       swiperList: [],
       iconList: [],
-      recommendList: []
+      recommendList: [],
+      lastClass: ''
     }
   },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json')
+      axios.get('/api/index.json?classNumber=' + this.classNumber)
         .then((res) => {
           res = res.data
           if (res.ret && res.data) {
@@ -51,6 +56,13 @@ export default {
   },
   mounted () {
     this.getHomeInfo()
+    this.lastClass = this.classNumber
+  },
+  activated () {
+    console.log('activited')
+    if (this.lastClass !== this.classNumber) {
+      this.getHomeInfo()
+    }
   }
 }
 </script>

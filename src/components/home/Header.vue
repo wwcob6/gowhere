@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{ this.$store.state.classNumber }}
+        {{ this.currentClass }}
         <span class="iconfont">&#xe6aa;</span>
       </div>
     </router-link>
@@ -17,10 +17,16 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
   props: {
     className: String
+  },
+  computed: {
+    ...mapState({
+      currentClass: 'classNumber'
+    })
   }
 }
 </script>
@@ -40,7 +46,7 @@ export default {
         font-size 0.4rem
         margin-left 0.1rem
     .header-right
-      width : 1.8rem
+      min-width : 1.04rem
       float : right
       text-align center
       color #ffffff

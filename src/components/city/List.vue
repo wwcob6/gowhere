@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前班级</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">{{ this.$store.state.classNumber }}</div>
+            <div class="button">{{ this.currentClass }}</div>
           </div>
         </div>
       </div>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import { EventBus } from '../../../bus/event-bus'
 import Bscroll from 'better-scroll'
 export default {
@@ -47,11 +48,18 @@ export default {
       letter: '通'
     }
   },
+  computed: {
+    ...mapState({
+      currentClass: 'classNumber'
+    })
+  },
   methods: {
     handleClassClick: function (item) {
-      this.$store.dispatch('changeClass', item)
+      this.changeClass(item)
       alert('选择成功，请返回！')
-    }
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeClass'])
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
